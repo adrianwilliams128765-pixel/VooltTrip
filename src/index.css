@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-neon-blue: #00d2ff;
+  --color-neon-blue-glow: rgba(0, 210, 255, 0.5);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-white/60 backdrop-blur-lg border-b border-white/20 sticky top-0 z-50;
+  }
+
+  .neon-button {
+    @apply bg-neon-blue text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 
+           hover:shadow-[0_0_20px_var(--color-neon-blue-glow)] hover:scale-105 active:scale-95;
+  }
+
+  .neon-text {
+    @apply text-neon-blue drop-shadow-[0_0_8px_var(--color-neon-blue-glow)];
+  }
+}
